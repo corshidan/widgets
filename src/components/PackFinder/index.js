@@ -63,15 +63,17 @@ export default function PackFinder() {
 				/>
 				<button onClick={() => getPacks(amount, packs)}>Find</button>
 			</div>
-			<div className="displaySection">
-				{output.reverse().map((pack, i) => {
-					return (
-						<li key={i}>
-							{pack[1]} x {pack[0]}
-						</li>
-					);
-				})}
-			</div>
+			{output && (
+				<div className="displaySection">
+					{output.reverse().map((pack, i) => {
+						return (
+							<li key={i}>
+								{pack[1]} x {pack[0]}
+							</li>
+						);
+					})}
+				</div>
+			)}
 		</div>
 	);
 }

@@ -1,4 +1,4 @@
-function wallyWidgets(amount, packs) {
+export default function wallyWidgets(amount, packs) {
 	const solutions = [];
 	const output = [];
 
@@ -70,5 +70,3 @@ function wallyWidgets(amount, packs) {
 	}
 	return output;
 }
-
-module.exports = wallyWidgets;
