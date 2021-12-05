@@ -15,7 +15,6 @@ export default function wallyWidgets(amount, packs) {
 			if (max) {
 				obj[max] = Math.floor(widgets / max);
 			}
-			// max ? (obj[max] = Math.floor(widgets / max)) : null;
 			widgets = widgets % max;
 			if (widgets < min && widgets !== 0) {
 				obj[min]++;
@@ -23,7 +22,6 @@ export default function wallyWidgets(amount, packs) {
 			sortedPacks.pop();
 		}
 		//Optimize the number of packs used
-		// console.log(obj);
 		const keys = Object.keys(obj);
 		let currentLoss = 0;
 		let index = 0;
@@ -43,6 +41,7 @@ export default function wallyWidgets(amount, packs) {
 	/**
 	 * Finding all possible solutions and saving the best
 	 */
+
 	const tempPacks = [...packs];
 	while (tempPacks.length > 0) {
 		solutions.push(find(amount));
@@ -61,7 +60,20 @@ export default function wallyWidgets(amount, packs) {
 			bestSolution = solution;
 		}
 	}
-
+	function checkForBetterPackSize(object) {
+		let currentSentWidgets = 0;
+		for (let packsize in object) {
+			currentSentWidgets += object[packsize] * packsize;
+		}
+		return currentSentWidgets;
+	}
+	if (Object.keys(bestSolution).includes(checkForBetterPackSize(bestSolution).toString())) {
+		let tempBestPack = checkForBetterPackSize(bestSolution);
+		for (let packsize in bestSolution) {
+			bestSolution[packsize] = null;
+		}
+		bestSolution[tempBestPack]++;
+	}
 	//Bulding up the output
 	for (amount in bestSolution) {
 		if (bestSolution[amount] > 0) {
