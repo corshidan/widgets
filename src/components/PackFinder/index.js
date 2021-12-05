@@ -26,12 +26,7 @@ export default function PackFinder() {
 		const response = wallyWidgets(widgets, packsArray);
 		setOutput(response);
 	}
-	const arr = [
-		[2000, 1],
-		[1000, 1],
-		[500, 1],
-		[250, 2],
-	];
+
 	return (
 		<div className="container">
 			<div className="addPacks">
