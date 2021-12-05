@@ -1,0 +1,62 @@
+.container {
+	width: 80%;
+	margin: 2em auto 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+.container > ul {
+	display: flex;
+	list-style: none;
+}
+.container ul > li {
+	margin: 0 0.5em;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+span {
+	margin-left: 0.1em;
+	font-size: 10px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.packsSection {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.addPacks button {
+	margin-left: 0.3em;
+	padding: 0.05em 0.4em;
+	cursor: pointer;
+}
+.addPacks input {
+	margin-left: 2.3em;
+}
+.addPacks {
+	margin-bottom: 0.5em;
+}
+.packsSection {
+	margin-bottom: 0.5em;
+}
+.widgetInputSection {
+	margin-bottom: 0.5em;
+}
+h4 {
+	margin: 0.5em 0;
+}
+.widgetInputSection input {
+	margin-right: 0.5em;
+}
+.widgetInputSection button {
+	margin-left: 0.1em;
+	padding: 0 0.4em;
+	cursor: pointer;
+}
+.displaySection {
+	list-style: none;
+}
