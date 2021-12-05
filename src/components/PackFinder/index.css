@@ -60,3 +60,18 @@ h4 {
 .displaySection {
 	list-style: none;
 }
+.github {
+	font-family: 'Times New Roman', Times, serif;
+	margin-top: 2em;
+	font-size: 1.3em;
+}
+img {
+	margin-left: 0.5em;
+	width: 25px;
+	height: 25px;
+}
+.text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

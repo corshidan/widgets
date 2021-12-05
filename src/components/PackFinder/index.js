@@ -74,6 +74,14 @@ export default function PackFinder() {
 					})}
 				</div>
 			)}
+			<div className="github">
+				<p className="text">
+					For more details
+					<a href="https://github.com/corshidan/widgets">
+						<img src="/github.png" alt="here" />
+					</a>
+				</p>
+			</div>
 		</div>
 	);
 }

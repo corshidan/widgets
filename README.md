@@ -1,5 +1,7 @@
 # Widget Calculator
 
+### You can check it out [deployed Here](https://wallywidgets.netlify.app/)
+
 ## The challenge
 
 Wally’s Widget Company is a widget wholesaler. They sell widgets in a variety of pack sizes:
