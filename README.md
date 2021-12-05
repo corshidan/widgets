@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Widget Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The challenge
 
-## Available Scripts
+Wally’s Widget Company is a widget wholesaler. They sell widgets in a variety of pack sizes:
 
-In the project directory, you can run:
+-   250 widgets
+-   500 widgets
+-   1,000 widgets
+-   2,000 widgets
+-   5,000 widgets
 
-### `npm start`
+Their customers can order any number of widgets, but they will always be given complete packs.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The company wants to be able to fulfil all orders according to the following rules:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Only whole packs can be sent. Packs cannot be broken open.
+2. Within the constraints of Rule 1 above, send out no more widgets than necessary to fulfil
+   the order.
+3. Within the constraints of Rules 1 & 2 above, send out as few packs as possible to fulfil each
+   order.
 
-### `npm test`
+So, for example:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Number of Widgets ordered | Correct packs to send             | Incorrect solution(s)                                    |
+| ------------------------- | --------------------------------- | -------------------------------------------------------- |
+| 1                         | 250 x 1                           | 500 x 1 (too many widgets)                               |
+| 250                       | 250 x 1                           | 500 x 1 (too many widgets)                               |
+| 251                       | 500 x 1                           | **250 x 2 (too many packs)**                             |
+| 501                       | 500 x 1<br>250 x 1                | 1,000 x 1 (too many widgets)<br>250 x 3 (too many packs) |
+| 12,001                    | 5,000 x 2<br>2,000 x 1<br>250 x 1 | 5,000 x 3 (too many widgets)                             |
 
-### `npm run build`
+Write a program that will tell Wally’s Widgets what packs to send out, for any given order size.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Keep your program flexible, so that new packs sizes may be added, or existing pack sizes changed
+or discarded, at a later date with minimal adjustments to your program.
